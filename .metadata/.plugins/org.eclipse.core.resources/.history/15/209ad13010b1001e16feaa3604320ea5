@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>form3.html</h2>
+	<form action="/form-param3" method="post">
+		이름: <input type="text" name="name"> <br>
+		나이: <input type="text" name="age"> <br>
+		<input type="submit" value="전송">
+	</form>
+	
+	<h3 th:text="${name}"></h3>
+	<h3 th:text="${age}"></h3>
+</body>
+</html>

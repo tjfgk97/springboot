@@ -3,8 +3,11 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.dto.DemoDTO;
 
 // @Controller : 해당 클래스를 컨드롤러 클래스로 스프링빈에 등록
 // 스프링 빈 : 스프링이 관리해주는 자바 객체
@@ -73,5 +76,21 @@ public class HomeController {
 		String str1 = p1;
 		model.addAttribute("p1", str1);
 		return "model2";
+	}
+	
+	@GetMapping("/form3")
+	public String form3() {
+		return "form3";
+	}
+	
+	@PostMapping("/form-param3")
+//	public String form3(@RequestParam("name") String name,
+//						@RequestParam("age") int age) {
+	public String form3(@ModelAttribute DemoDTO demoDTO, Model model) {
+//		System.out.println("name = " + name);
+//		System.out.println("age = " + age);
+		System.out.println(demoDTO);
+		model.addAttribute("demo", demoDTO);
+		return "model3";
 	}
 }
