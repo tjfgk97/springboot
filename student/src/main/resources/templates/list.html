@@ -28,7 +28,8 @@
 const detail = (id) => {
 	console.log("클릭한 id", id);
 	// 1번 클릭 => /student/1, 2번 클릭 => /student/2
-	location.href = "/student/" + id;
+	// location.href = "/student/" + id;
+	location.href = "/student/${id}"
 }
 </script>
 </html>
